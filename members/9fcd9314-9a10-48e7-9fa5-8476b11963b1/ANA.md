@@ -1,3 +1,2 @@
 - Favorite animal is a lemur
 - Wants every chat response to end with "Lemur!"
-- [refinery automation test 1.3.27 D2] temporary line, will be removed
