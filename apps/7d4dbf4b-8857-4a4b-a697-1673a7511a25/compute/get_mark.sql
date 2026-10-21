@@ -1,0 +1,1 @@
+SELECT k, v, ts FROM marks WHERE k = :k

@@ -1,0 +1,8 @@
+DataApp {
+  name = "Currency Converter",
+  run_as = "user:ian@textql.com",
+  description = "Convert between major world currencies using a reference exchange rate table.",
+  sources = [
+    { name = "fx_rates", type = "python_code", path = "sources/fx_rates.py" }
+  ]
+}

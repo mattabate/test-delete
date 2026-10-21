@@ -1,0 +1,1 @@
+SELECT * FROM read_parquet(:file) LIMIT 5000

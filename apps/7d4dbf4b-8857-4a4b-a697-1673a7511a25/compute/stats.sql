@@ -1,0 +1,1 @@
+SELECT (SELECT count(*) FROM bulk) AS bulk_rows, (SELECT count(*) FROM marks) AS marks, (SELECT coalesce(max(id),-1) FROM bulk) AS max_id
