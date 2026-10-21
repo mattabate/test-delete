@@ -1,0 +1,21 @@
+Agent {
+  name = "SNOW_AGENT",
+  prompt_file = "prompt.md",
+  run_as = "user:rodney@textql.com",
+  connectors = ["id:3"],
+  tools = ["sql", "python", "web_search"],
+  model = "default",
+  methodology = "adaptive",
+  fast_mode = false,
+  schedules = [
+    { cadence = "DAILY" }
+  ],
+  skip_org_default_channel = false,
+  email_output = false,
+  feed = true,
+  feed_channels = ["Main feed"],
+  memory = "agents/snow-agent/memory",
+  callable_as_subagent = false,
+  allow_ad_hoc_subagents = true,
+  enabled = true
+}

@@ -1,0 +1,22 @@
+Agent {
+  name = "Ian Lemur",
+  prompt_file = "prompt.md",
+  run_as = "user:ian@textql.com",
+  connectors = ["id:1", "id:2", "id:3"],
+  tools = ["sql", "python", "web_search", "email"],
+  model = "opus-5-5",
+  methodology = "adaptive",
+  fast_mode = false,
+  schedules = [
+    { cadence = "DAILY" }
+  ],
+  skip_org_default_channel = false,
+  email_output = true,
+  email_recipients = ["ian@textql.com"],
+  feed = true,
+  feed_channels = ["Main feed"],
+  memory = "agents/ian-lemur/memory",
+  callable_as_subagent = false,
+  allow_ad_hoc_subagents = true,
+  enabled = true
+}
