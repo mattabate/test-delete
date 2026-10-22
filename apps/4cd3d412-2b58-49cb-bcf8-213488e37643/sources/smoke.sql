@@ -1,1 +1,0 @@
-SELECT 1 as test_col, 'a' as name UNION ALL SELECT 2, 'b'
