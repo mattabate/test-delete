@@ -1,8 +1,0 @@
-Playbook {
-  name = "rc1328-qa-vc-bad playbook",
-  prompt = "Summarize totals. [refinery automation test 1.3.28 onto]",
-  run_as = "sa:rc1328-qa-vc@embed.textql",
-  cron_string = "0 9 * * 1",
-  files = [ { path = "qa/rc1328-vc-data/totals.csv" } ],
-  enabled = false
-}
