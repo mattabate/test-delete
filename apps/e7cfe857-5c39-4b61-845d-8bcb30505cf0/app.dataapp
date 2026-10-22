@@ -2,6 +2,7 @@ DataApp {
   name = "rc1328-qa-failsched lemur",
   run_as = "user:ian@textql.com",
   description = "[refinery automation test 1.3.28 apps] #17092 failing scheduled refresh",
+  schedule = { enabled = true, cron = "*/5 * * * *" },
   sources = [
     { name = "probe", type = "python_code", path = "sources/probe.py" }
   ]
