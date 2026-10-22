@@ -1,8 +1,0 @@
-DataApp {
-  name = "rc1328-qa-refresh lemur",
-  run_as = "sa:rc1328-qa-apps@embed.textql",
-  description = "[refinery automation test 1.3.28 apps] #17198 serialized refreshes",
-  sources = [
-    { name = "slow", type = "python_code", path = "sources/slow.py" }
-  ]
-}
