@@ -1,9 +1,0 @@
-DataApp {
-  name = "rc1328-qa-runner-app lemur",
-  run_as = "sa:rc1328-qa-runner@embed.textql",
-  description = "[refinery automation test 1.3.28 apps] #17095 departed Runner (scheduled app)",
-  schedule = { enabled = false, cron = "*/5 * * * *" },
-  sources = [
-    { name = "probe", type = "python_code", path = "sources/probe.py" }
-  ]
-}
