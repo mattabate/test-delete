@@ -5,5 +5,12 @@ DataApp {
   staleness_seconds = 4321,
   sources = [
     { name = "src_1792637748", type = "python_code", path = "sources/src_1792637748.py" }
+  ],
+  functions = [
+    {
+      name = "fn_1792637748",
+      description = "noop",
+      path = "compute/fn_1792637748.sql"
+    }
   ]
 }
