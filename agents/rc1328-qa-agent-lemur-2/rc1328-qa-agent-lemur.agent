@@ -1,0 +1,16 @@
+Agent {
+  name = "rc1328-qa-agent-lemur",
+  prompt_file = "prompt.md",
+  run_as = "user:ian@textql.com",
+  tools = [],
+  model = "default",
+  methodology = "adaptive",
+  fast_mode = false,
+  skip_org_default_channel = false,
+  email_output = false,
+  feed = false,
+  memory = "agents/rc1328-qa-agent-lemur-2/memory",
+  callable_as_subagent = true,
+  allow_ad_hoc_subagents = true,
+  enabled = true
+}
