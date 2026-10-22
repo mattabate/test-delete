@@ -1,9 +1,0 @@
-Dashboard {
-  name = "rc1328-qa-runner-dash lemur",
-  run_as = "sa:rc1328-qa-runner@embed.textql",
-  description = "[refinery automation test 1.3.28 apps] #17095 departed Runner (scheduled dashboard)",
-  type = "streamlit",
-  entrypoint = "rc1328-qa-runner-dash-lemur.py",
-  cron_string = "*/5 * * * *",
-  enabled = true
-}
