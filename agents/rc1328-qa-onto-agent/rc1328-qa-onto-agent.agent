@@ -5,6 +5,7 @@ Agent {
   tools = [],
   model = "default",
   methodology = "adaptive",
+  -- rc1328 qa comment fast_mode
   fast_mode = false,
   skip_org_default_channel = true,
   email_output = false,
@@ -13,5 +14,6 @@ Agent {
   memory = "agents/rc1328-qa-onto-agent/memory",
   callable_as_subagent = true,
   allow_ad_hoc_subagents = true,
+  -- rc1328 qa comment enabled
   enabled = true
 }
