@@ -3,7 +3,7 @@ DataApp {
   run_as = "user:ian@textql.com",
   sources = [
     { name = "deals", type = "python_code", path = "sources/deals.py" },
-    { name = "slow_q", type = "sql_query", path = "sources/slow_q.sql", connector = "id:3", parameters = [ { name = "secs", type = "int", default = "1" } ] }
+    { name = "slow_src", type = "python_code", path = "sources/slow_src.py" }
   ],
   functions = [
     {
