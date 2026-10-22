@@ -14,6 +14,5 @@ Agent {
   memory = "agents/rc1328-qa-onto-agent/memory",
   callable_as_subagent = true,
   allow_ad_hoc_subagents = true,
-  -- rc1328 qa comment enabled
-  enabled = true
+  enabled = false
 }
