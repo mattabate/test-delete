@@ -1,0 +1,1 @@
+SELECT SYSTEM$WAIT(:secs) AS w
