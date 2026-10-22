@@ -1,5 +1,0 @@
-DataApp {
-  name = "rc1328-qa-anaedit lemur",
-  run_as = "user:ian@textql.com",
-  description = "[refinery automation test 1.3.28 apps] #17135/#17137 Ana edits"
-}
