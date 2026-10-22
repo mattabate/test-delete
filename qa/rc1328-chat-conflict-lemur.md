@@ -1,2 +1,2 @@
 line1: alpha
-line2: beta
+line2: gamma-from-rpc
