@@ -1,0 +1,19 @@
+DataApp {
+  name = "rc1328-qa-burst lemur",
+  run_as = "user:ian@textql.com",
+  description = "[refinery automation test 1.3.28 apps] #16971/#16976 sandbox capability rate limit",
+  app_db_setup = [
+    "CREATE TABLE IF NOT EXISTS t (x INT)"
+  ],
+  functions = [
+    {
+      name = "burst",
+      description = "burst ana.sql",
+      path = "compute/burst.py",
+      parameters = [
+        { name = "n", type = "number" },
+        { name = "threads", type = "number" }
+      ]
+    }
+  ]
+}
