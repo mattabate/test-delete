@@ -1,0 +1,1 @@
+let e = _tql.client_attributes_json.tql_user_email in sql''SELECT ${e} AS viewer, 1 AS n''
