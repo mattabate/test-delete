@@ -1,1 +1,0 @@
-INSERT INTO marks VALUES (:k, :v, :_now)

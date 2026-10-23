@@ -1,4 +1,0 @@
-DataApp {
-  name = "Blank Screenshot Test",
-  run_as = "user:ian@textql.com"
-}

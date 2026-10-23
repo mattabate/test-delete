@@ -1,1 +1,0 @@
-SELECT k, v, ts FROM marks ORDER BY ts DESC LIMIT 20

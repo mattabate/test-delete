@@ -1,1 +1,0 @@
-SELECT upload_id, label, target_table, file_name, row_count, col_count, matched_cols, created_at, coalesce(total_rows, row_count) AS total_rows FROM uploads ORDER BY created_at DESC, label

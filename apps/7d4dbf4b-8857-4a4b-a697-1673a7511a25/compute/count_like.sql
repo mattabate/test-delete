@@ -1,1 +1,0 @@
-SELECT count(*) AS n, count(DISTINCT k) AS nd FROM marks WHERE k LIKE :p || '%'

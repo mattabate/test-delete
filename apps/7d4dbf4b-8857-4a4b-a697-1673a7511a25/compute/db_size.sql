@@ -1,1 +1,0 @@
-SELECT database_size, total_blocks, block_size FROM pragma_database_size()

@@ -1,8 +1,0 @@
-<!doctype html><html><head><meta charset="utf-8"><title>rc1328 snapshot limit QA</title>
-<style>body{font-family:system-ui,sans-serif;margin:24px;background:#fff;color:#111}@media (prefers-color-scheme:dark){body{background:#111;color:#eee}}</style></head>
-<body><h2>rc1328 snapshot limit QA</h2><p>Embeds a snapshot larger than the old 128 MiB cap (#17176).</p><div id="out">Loading...</div>
-<script>
-try{const b=[].concat(ana.data.get('big0')||[],ana.data.get('big1')||[],ana.data.get('big2')||[]);const s=(ana.data.get('stamp')||[])[0]||{};
-document.getElementById('out').textContent=`big rows: ${b.length}, first id ${b.length?b[0].id:'-'}, last id ${b.length?b[b.length-1].id:'-'}; refreshed_at ${s.refreshed_at}`;}
-catch(e){document.getElementById('out').textContent='Error: '+e;}
-</script></body></html>
