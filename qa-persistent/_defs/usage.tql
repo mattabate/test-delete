@@ -1,0 +1,2 @@
+-- Backing views for the QA persistent usage queries (TextQL Usage, connector 1).
+{ chats = sql"ana_usage.chats", cells = sql"ana_usage.cells", llm = sql"ana_usage.llm_usage" }

@@ -1,0 +1,52 @@
+---
+type: composed_view
+name: "QA Persistent Usage View"
+description: "[refinery automation test persistent] Cells and chats by day, cell type or chat paradigm, with filters."
+default_connector: 1
+---
+import u from "./_defs/usage.tql"
+
+params {
+  -- Metrics to return: "cells", "error_cells", "chats". At least one.
+  metrics: Set<"cells" | "error_cells" | "chats"> = []
+  -- Group by: "day", "cell_type", "paradigm". Empty for a single total row.
+  dimensions: Set<"day" | "cell_type" | "paradigm"> = []
+  -- Look-back window in days.
+  days: Int = 30
+  -- Filters. cell_type supports equals and in; paradigm supports equals.
+  filters: List<FilterInput> = []
+}
+
+let
+  metric_frags = matchSet metrics {
+    "cells" -> sql"count(*) AS cells",
+    "error_cells" -> sql"sum(CASE WHEN c.had_error THEN 1 ELSE 0 END) AS error_cells",
+    "chats" -> sql"count(DISTINCT c.chat_id) AS chats",
+  }
+  dims = matchSet dimensions {
+    "day" -> { sel = sql"date_trunc('day', c.created_at)::date AS day", grp = sql"date_trunc('day', c.created_at)::date" },
+    "cell_type" -> { sel = sql"c.cell_type AS cell_type", grp = sql"c.cell_type" },
+    "paradigm" -> { sel = sql"ch.paradigm AS paradigm", grp = sql"ch.paradigm" },
+  }
+  checked_metrics = if isEmpty metric_frags then error "Pick at least one metric" else metric_frags
+  filterables = [
+    { key = "cell_type", expr = sql"c.cell_type", ops = ["equals", "in"] },
+    { key = "paradigm", expr = sql"ch.paradigm", ops = ["equals"] }
+  ]
+  filter_keys = map (\f -> f.key) filters
+  needs_chats = if contains dimensions "paradigm" then true else contains filter_keys "paradigm"
+  join_chats = if needs_chats then sql"JOIN ${u.chats} ch ON ch.id = c.chat_id" else sql""
+  and_filters = wrap "AND " "" (filterWhere filterables filters)
+  select_list = concatSep ", " ((map (\d -> d.sel) dims) ++ checked_metrics)
+  group_list = concatSep ", " (map (\d -> d.grp) dims)
+  group_clause = wrap "GROUP BY " "" group_list
+  order_clause = wrap "ORDER BY " "" group_list
+in sql''
+SELECT ${select_list}
+FROM ${u.cells} c
+${join_chats}
+WHERE c.created_at > now() - make_interval(days => ${days})
+${and_filters}
+${group_clause}
+${order_clause}
+''

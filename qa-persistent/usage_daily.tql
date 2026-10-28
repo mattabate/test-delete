@@ -1,0 +1,16 @@
+---
+type: query
+name: "QA Persistent Usage Daily"
+description: "[refinery automation test persistent] Chats started per day over the last N days."
+default_connector: 1
+---
+params {
+  -- Window length in days, for example 7 or 30.
+  days: Int = 30
+}
+SELECT date_trunc('day', created_at)::date AS day, count(*) AS chats
+FROM ana_usage.chats
+WHERE deleted_at IS NULL
+  AND created_at > now() - make_interval(days => ${days})
+GROUP BY 1
+ORDER BY 1
