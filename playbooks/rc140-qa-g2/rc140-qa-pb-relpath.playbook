@@ -1,8 +1,0 @@
-Playbook {
-  name = "rc140-qa-pb-relpath-lemur",
-  prompt = "[refinery automation test 1.4.0] never run",
-  run_as = "user:ian@textql.com",
-  cron_string = "0 9 * * 1",
-  files = [ { path = "rc140-qa-data.csv" } ],
-  enabled = false
-}
