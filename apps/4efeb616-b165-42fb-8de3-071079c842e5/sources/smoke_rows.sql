@@ -1,0 +1,1 @@
+SELECT 1 as test_col, 'a' as label UNION ALL SELECT 2, 'b'

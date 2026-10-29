@@ -1,0 +1,27 @@
+DataApp {
+  name = "RC9 Probe lemur",
+  run_as = "user:ian@textql.com",
+  description = "Synthetic sales deals explorer: amount by region with a stage filter, plus a slow_probe test compute function.",
+  sources = [
+    { name = "deals", type = "python_code", path = "sources/deals.py" },
+    { name = "slow_q", type = "sql_query", path = "sources/slow_q.sql", connector = "id:3", parameters = [ { name = "secs", type = "int", default = "1" } ] }
+  ],
+  functions = [
+    {
+      name = "slow_probe",
+      description = "rc9 timeout test: sleep N seconds",
+      path = "compute/slow_probe.py",
+      parameters = [
+        { name = "seconds", type = "number" }
+      ]
+    },
+    {
+      name = "slow_query",
+      description = "rc9 timeout test: Snowflake SYSTEM$WAIT via ana.query",
+      path = "compute/slow_query.py",
+      parameters = [
+        { name = "seconds", type = "number" }
+      ]
+    }
+  ]
+}

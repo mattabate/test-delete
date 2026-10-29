@@ -1,0 +1,1 @@
+SELECT target_table, count(*) AS rows_staged FROM staged_rows GROUP BY target_table ORDER BY rows_staged DESC
