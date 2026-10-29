@@ -1,8 +1,0 @@
-Agent {
-  name = "rc140-qa-agent-feed-lemur",
-  prompt = "[refinery automation test 1.4.0] never run",
-  run_as = "user:ian@textql.com",
-  tools = [],
-  structured_report = true,
-  enabled = false
-}
