@@ -1,4 +1,0 @@
-[submodule "rc140-qa-sub-lemur"]
-	path = rc140-qa-sub-lemur
-	url = https://github.com/octocat/Hello-World.git
-	branch = master
