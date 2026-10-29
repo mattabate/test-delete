@@ -1,1 +1,0 @@
-INSERT INTO upload_benchmarks VALUES (:file_name, :file_size_bytes, :upload_ms, :_now)

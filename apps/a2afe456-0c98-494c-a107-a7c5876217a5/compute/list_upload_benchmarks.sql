@@ -1,1 +1,0 @@
-SELECT file_name, file_size_bytes, upload_ms, created_at FROM upload_benchmarks ORDER BY created_at DESC LIMIT 50

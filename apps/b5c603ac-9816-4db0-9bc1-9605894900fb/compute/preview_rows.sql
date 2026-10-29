@@ -1,1 +1,0 @@
-SELECT row_idx, row_json FROM staged_rows WHERE upload_id = :upload_id ORDER BY row_idx LIMIT 25

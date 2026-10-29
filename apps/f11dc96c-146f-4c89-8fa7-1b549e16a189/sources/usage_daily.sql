@@ -1,1 +1,0 @@
-select date_trunc('day', created_at)::date as day, count(*) as chats from ana_usage.chats where created_at > now() - interval '30 days' group by 1 order by 1

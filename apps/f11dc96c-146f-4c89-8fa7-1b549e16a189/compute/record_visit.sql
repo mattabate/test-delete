@@ -1,1 +1,0 @@
-INSERT INTO visits VALUES (:_uuid, :note, :source, :_now)

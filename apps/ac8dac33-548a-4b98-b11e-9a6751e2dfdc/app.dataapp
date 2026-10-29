@@ -1,4 +1,0 @@
-DataApp {
-  name = "Time Zone Calculator",
-  run_as = "user:ian@textql.com"
-}
