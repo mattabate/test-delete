@@ -1,0 +1,16 @@
+Dashboard {
+  name = "QA Persistent Dashboard",
+  run_as = "user:ian@textql.com",
+  description = "[refinery automation test persistent] Streamlit regression fixture: snapshot SQL on the warehouse and TextQL Usage, a live parameterized query (ana.query) and a python_code source. Refreshes daily at 13:00 UTC.",
+  type = "streamlit",
+  entrypoint = "qa-persistent-dashboard.py",
+  data_sources = [
+    { type = "sql_query", name = "warehouse_summary", connector = "id:37", query = "select left(close_date, 4) as category, count(*) as n, count(distinct account_id) as amount from public.opportunity group by 1 order by 1" },
+    { type = "sql_query", name = "usage_daily", connector = "id:1", query = "select d.day, coalesce(c.chats, 0) as chats, coalesce(k.cells, 0) as cells from (select generate_series(current_date - 29, current_date, interval '1 day')::date as day) d left join (select created_at::date as day, count(*) as chats from ana_usage.chats where created_at >= current_date - 29 group by 1) c on c.day = d.day left join (select created_at::date as day, count(*) as cells from ana_usage.cells where created_at >= current_date - 29 group by 1) k on k.day = d.day order by 1" },
+    { type = "sql_query", name = "usage_live", connector = "id:1", query = "select created_at::date as day, count(*) as chats from ana_usage.chats where created_at >= current_date - cast(:days as int) group by 1 order by 1", parameters = [ { name = "days", type = "int", default = "30" } ] },
+    { type = "python_code", name = "reference_calc", path = "qa-persistent-dashboard.reference-calc.py" }
+  ],
+  cron_string = "0 13 * * *",
+  schedule_timezone = "UTC",
+  enabled = true
+}
