@@ -3,24 +3,16 @@ DataApp {
   run_as = "user:ian@textql.com",
   description = "Bar chart of deal amount by region with a stage filter, plus a slow_probe test compute function.",
   sources = [
-    { name = "deals", type = "python_code", path = "sources/deals.py" },
-    { name = "slow_src", type = "python_code", path = "sources/slow_src.py" }
+    { name = "deals", type = "python_code", path = "sources/deals.py" }
   ],
   functions = [
     {
       name = "slow_probe",
-      description = "rc9 timeout test: sleep N seconds",
+      description = "Sleeps for the given number of seconds, used to test slow/async compute behavior.",
       path = "compute/slow_probe.py",
+      returns = "{slept: number}",
       parameters = [
-        { name = "seconds", type = "number" }
-      ]
-    },
-    {
-      name = "slow_query",
-      description = "rc9 timeout test: Snowflake SYSTEM$WAIT via ana.query",
-      path = "compute/slow_query.py",
-      parameters = [
-        { name = "seconds", type = "number" }
+        { name = "seconds", type = "number", description = "Number of seconds to sleep before returning." }
       ]
     }
   ]
