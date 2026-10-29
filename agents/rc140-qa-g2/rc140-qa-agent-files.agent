@@ -1,8 +1,10 @@
 Agent {
-  name = "rc140-qa-agent-files-lemur",
+  name = "rc140-qa-agent-files-lemur renamed",
   prompt = "[refinery automation test 1.4.0] never run",
   run_as = "user:ian@textql.com",
   tools = ["python"],
-  files = [ { path = "rc140-qa-agent-data.csv" } ],
+  files = [
+    { path = "rc140-qa-agent-data.csv" }
+  ],
   enabled = false
 }
