@@ -1,0 +1,7 @@
+import pandas as pd
+
+reference_calc = pd.DataFrame({
+    'k': [1, 2, 3, 4, 5],
+    'square': [1, 4, 9, 16, 25],
+    'label': ['one', 'two', 'three', 'four', 'five'],
+})
