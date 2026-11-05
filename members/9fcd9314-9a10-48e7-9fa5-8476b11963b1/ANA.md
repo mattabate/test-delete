@@ -1,2 +1,1 @@
-- Favorite animal is a lemur
 - Wants every chat response to end with "Lemur!"
