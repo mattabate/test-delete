@@ -1,1 +1,0 @@
-SELECT (SELECT count(*) FROM visits) AS visits, (SELECT count(*) FROM heartbeat) AS heartbeats, (SELECT max(created_at) FROM visits) AS last_visit, (SELECT max(created_at) FROM heartbeat) AS last_heartbeat
