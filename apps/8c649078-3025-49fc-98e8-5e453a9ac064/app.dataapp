@@ -1,0 +1,8 @@
+DataApp {
+  name = "Page Counts Test",
+  run_as = "user:ian@textql.com",
+  description = "Refinery automation test: shows row counts from ana.data.get with no page, page 1, and page 3 against a 3,000-row stored source.",
+  sources = [
+    { name = "orders", type = "sql_query", path = "sources/orders.sql", connector = "id:37" }
+  ]
+}

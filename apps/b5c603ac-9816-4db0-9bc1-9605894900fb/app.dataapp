@@ -1,0 +1,66 @@
+DataApp {
+  name = "CLIENT360 CSV Staging",
+  run_as = "user:rodney@textql.com",
+  description = "Upload CSV files and stage them in the app's private DuckDB, validated against the CLIENT360 table shapes.",
+  app_db_setup = [
+    "CREATE TABLE uploads (upload_id TEXT, label TEXT, target_table TEXT, file_name TEXT, row_count INTEGER, col_count INTEGER, matched_cols INTEGER, created_at TEXT)",
+    "CREATE TABLE staged_rows (upload_id TEXT, target_table TEXT, row_idx INTEGER, row_json TEXT)",
+    "ALTER TABLE uploads ADD COLUMN total_rows INTEGER",
+    "CREATE INDEX idx_staged_upload ON staged_rows (upload_id)"
+  ],
+  sources = [
+    { name = "target_schema", type = "python_code", path = "sources/target_schema.py" }
+  ],
+  functions = [
+    {
+      name = "inspect_upload",
+      description = "Read an uploaded file and compare its columns against the chosen target table's columns.",
+      path = "compute/inspect_upload.py",
+      returns = "Object with row_count, columns, missing, extra, preview",
+      parameters = [
+        { name = "file", type = "object", description = "Upload reference returned by ana.upload" },
+        { name = "target_columns", type = "array", description = "Expected column names for the chosen target table; empty for free-form" }
+      ]
+    },
+    {
+      name = "list_uploads",
+      description = "All staged upload batches, newest first.",
+      path = "compute/list_uploads.sql"
+    },
+    {
+      name = "staged_totals",
+      description = "Staged row counts grouped by target table.",
+      path = "compute/staged_totals.sql"
+    },
+    {
+      name = "preview_rows",
+      description = "First rows staged for one upload batch.",
+      path = "compute/preview_rows.sql",
+      parameters = [
+        { name = "upload_id", type = "string", description = "Upload batch identifier" }
+      ]
+    },
+    {
+      name = "delete_upload",
+      description = "Remove an upload batch and all of its staged rows.",
+      path = "compute/delete_upload.py",
+      parameters = [
+        { name = "upload_id", type = "string", description = "Upload batch identifier" }
+      ]
+    },
+    {
+      name = "ingest_upload",
+      description = "Stage one chunk of an uploaded file's rows into the app's private DuckDB, resumable by offset.",
+      path = "compute/ingest_upload.py",
+      returns = "Object with upload_id, staged, next_offset, total, ceiling, done, truncated",
+      parameters = [
+        { name = "file", type = "object", description = "Upload reference returned by ana.upload" },
+        { name = "target", type = "string", description = "Target table name, or 'Free-form' when not mapped" },
+        { name = "label", type = "string", description = "User-supplied label for this batch" },
+        { name = "target_columns", type = "array", description = "Expected column names for the chosen target table" },
+        { name = "upload_id", type = "string", description = "Batch id from the first chunk; empty string starts a new batch" },
+        { name = "offset", type = "number", description = "Row offset to resume from; 0 for the first chunk" }
+      ]
+    }
+  ]
+}

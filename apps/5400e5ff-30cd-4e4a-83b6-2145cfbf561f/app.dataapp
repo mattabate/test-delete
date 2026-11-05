@@ -1,0 +1,21 @@
+DataApp {
+  name = "rc141-qa-17884-state-lemur-0502",
+  run_as = "user:ian@textql.com",
+  description = "[refinery automation test 1.4.1]",
+  functions = [
+    {
+      name = "state_probe",
+      description = "set and get one app-scoped state key",
+      path = "compute/state_probe.py",
+      parameters = [
+        { name = "tag", type = "string" }
+      ]
+    }
+  ],
+  capabilities = [
+    {
+      type = "state",
+      scope = "app"
+    }
+  ]
+}

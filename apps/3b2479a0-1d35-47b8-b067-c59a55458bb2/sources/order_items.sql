@@ -1,0 +1,1 @@
+SELECT order_item_id, order_id, product_id, totalprice, service_date, end_date FROM public.order_item LIMIT 3000

@@ -1,0 +1,8 @@
+DataApp {
+  name = "rc141-qa-f054-app-063432",
+  run_as = "user:ian@textql.com",
+  description = "Synthetic sales deals: amount by region with a stage filter.",
+  sources = [
+    { name = "deals", type = "python_code", path = "sources/deals.py" }
+  ]
+}

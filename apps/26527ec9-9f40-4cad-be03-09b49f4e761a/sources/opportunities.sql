@@ -1,0 +1,1 @@
+SELECT opportunity_id, close_date, account_id, owner_id, partner_id FROM public.opportunity ORDER BY opportunity_id LIMIT 5000

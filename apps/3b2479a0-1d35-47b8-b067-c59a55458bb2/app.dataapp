@@ -1,0 +1,8 @@
+DataApp {
+  name = "Pagination Count Test",
+  run_as = "user:ian@textql.com",
+  description = "Tests ana.data.get page counts against a 3,000-row stored source from order_item.",
+  sources = [
+    { name = "order_items", type = "sql_query", path = "sources/order_items.sql", connector = "id:37" }
+  ]
+}

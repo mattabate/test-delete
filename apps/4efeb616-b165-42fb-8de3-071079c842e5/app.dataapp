@@ -1,0 +1,7 @@
+DataApp {
+  name = "Smoke 1.3.27 lemur",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "smoke_rows", type = "sql_query", path = "sources/smoke_rows.sql", connector = "id:37" }
+  ]
+}

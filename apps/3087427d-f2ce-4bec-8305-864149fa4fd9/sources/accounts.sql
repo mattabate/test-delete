@@ -1,0 +1,1 @@
+SELECT account_id, owner_id, territory_id, type FROM account ORDER BY account_id LIMIT 5000

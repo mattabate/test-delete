@@ -1,0 +1,7 @@
+DataApp {
+  name = "Source Paging Test",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "accounts", type = "sql_query", path = "sources/accounts.sql", connector = "id:37" }
+  ]
+}

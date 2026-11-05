@@ -1,0 +1,8 @@
+DataApp {
+  name = "rc141-qa-18061-usage-app-lemur-0500",
+  run_as = "user:ian@textql.com",
+  description = "[refinery automation test 1.4.1]",
+  sources = [
+    { name = "usage_daily", type = "sql_query", path = "sources/usage_daily.sql", connector = "id:1" }
+  ]
+}

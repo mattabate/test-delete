@@ -1,0 +1,8 @@
+DataApp {
+  name = "Order Source Page Counts",
+  run_as = "user:ian@textql.com",
+  description = "Demonstrates ana.data.get paging behavior against a stored source of the order table (100,000 rows).",
+  sources = [
+    { name = "orders", type = "sql_query", path = "sources/orders.sql", connector = "id:37" }
+  ]
+}

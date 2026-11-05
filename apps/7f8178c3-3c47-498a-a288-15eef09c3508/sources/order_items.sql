@@ -1,0 +1,1 @@
+SELECT * FROM public.order_item ORDER BY order_item_id LIMIT 5000

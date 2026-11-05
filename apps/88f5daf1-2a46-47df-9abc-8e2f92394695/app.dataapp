@@ -1,0 +1,18 @@
+DataApp {
+  name = "RC9 Probe lemur",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "deals", type = "python_code", path = "sources/deals.py" }
+  ],
+  functions = [
+    {
+      name = "slow_probe",
+      description = "Sleeps for the given number of seconds and returns confirmation of how long it slept. Used to probe latency/timeout behavior.",
+      path = "compute/slow_probe.py",
+      returns = "{\"slept\": <number of seconds actually slept>}",
+      parameters = [
+        { name = "seconds", type = "number", description = "Number of seconds to sleep before returning." }
+      ]
+    }
+  ]
+}

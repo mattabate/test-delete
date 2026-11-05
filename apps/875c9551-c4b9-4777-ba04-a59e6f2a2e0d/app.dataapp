@@ -1,0 +1,8 @@
+DataApp {
+  name = "Page Count Test",
+  run_as = "user:ian@textql.com",
+  description = "Test app comparing row counts from ana.data.get with no page vs page 1 vs page 3.",
+  sources = [
+    { name = "orders", type = "sql_query", path = "sources/orders.sql", connector = "id:37" }
+  ]
+}

@@ -1,0 +1,1 @@
+SELECT order_id, opportunity_id FROM public."order" LIMIT 5000

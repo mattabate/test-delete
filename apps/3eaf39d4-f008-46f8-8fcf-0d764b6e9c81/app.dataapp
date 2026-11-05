@@ -1,0 +1,7 @@
+DataApp {
+  name = "rc140-qa-cache-lemur",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "orders", type = "python_code", path = "sources/orders.py" }
+  ]
+}

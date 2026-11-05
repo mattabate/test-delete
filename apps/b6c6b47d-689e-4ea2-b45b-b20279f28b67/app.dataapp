@@ -1,0 +1,7 @@
+DataApp {
+  name = "Top Traded Currencies",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "currencies", type = "python_code", path = "sources/currencies.py" }
+  ]
+}

@@ -1,0 +1,8 @@
+DataApp {
+  name = "rc141-qa-f054-app rc141-qa-f054-app 2026-11-05 09:33:59",
+  run_as = "user:ian@textql.com",
+  description = "Interactive explorer of 200 synthetic sales deals: total amount by region, filterable by stage.",
+  sources = [
+    { name = "deals", type = "python_code", path = "sources/deals.py" }
+  ]
+}

@@ -1,0 +1,19 @@
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'tremor';
+
+export function StageFilter({ stage, stages, onChange }) {
+  return (
+    <Select value={stage} onValueChange={onChange}>
+      <SelectTrigger className="w-44">
+        <SelectValue placeholder="Stage" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="all">All stages</SelectItem>
+        {stages.map((s) => (
+          <SelectItem key={s} value={s}>
+            {s}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+}
