@@ -1,0 +1,1 @@
+select date_trunc('day', created_at)::date as day, count(*) as cells from ana_usage.cells where created_at > now() - make_interval(days => :days) group by 1 order by 1
