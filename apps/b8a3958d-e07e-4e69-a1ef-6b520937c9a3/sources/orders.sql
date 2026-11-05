@@ -1,0 +1,1 @@
+SELECT order_id, opportunity_id FROM "order"

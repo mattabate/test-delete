@@ -1,0 +1,7 @@
+DataApp {
+  name = "Page Read Count Test",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "order_items", type = "sql_query", path = "sources/order_items.sql", connector = "id:37" }
+  ]
+}

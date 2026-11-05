@@ -1,0 +1,8 @@
+DataApp {
+  name = "Order Item Page Counts",
+  run_as = "user:ian@textql.com",
+  description = "Demonstrates ana.data.get(source) page counts against a stored order_item source.",
+  sources = [
+    { name = "order_items", type = "sql_query", path = "sources/order_items.sql", connector = "id:37" }
+  ]
+}

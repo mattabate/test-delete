@@ -1,0 +1,8 @@
+DataApp {
+  name = "Opportunity Source Paging Check",
+  run_as = "user:ian@textql.com",
+  description = "Tests ana.data.get paging behavior on a stored source with 5,000 opportunity rows.",
+  sources = [
+    { name = "opportunities", type = "sql_query", path = "sources/opportunities.sql", connector = "id:37" }
+  ]
+}

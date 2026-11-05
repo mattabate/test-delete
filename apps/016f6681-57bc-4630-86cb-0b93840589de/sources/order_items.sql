@@ -1,0 +1,1 @@
+SELECT order_item_id, order_id, product_id, subscription, service_date, end_date, length_years, totalprice FROM public.order_item LIMIT 5000

@@ -1,0 +1,8 @@
+DataApp {
+  name = "Source Paging Counts",
+  run_as = "user:ian@textql.com",
+  description = "Demonstrates ana.data.get paging behavior over a stored order_item source: counts rows returned with no page, page 1, and page 3.",
+  sources = [
+    { name = "order_items", type = "sql_query", path = "sources/order_items.sql", connector = "id:37" }
+  ]
+}

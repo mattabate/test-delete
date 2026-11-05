@@ -1,0 +1,8 @@
+DataApp {
+  name = "Order Item Paging Test",
+  run_as = "user:ian@textql.com",
+  description = "Stores a 3,000-row order_item snapshot and reports row counts returned by ana.data.get with no page, page 1, and page 3.",
+  sources = [
+    { name = "order_items", type = "sql_query", path = "sources/order_items.sql", connector = "id:37" }
+  ]
+}

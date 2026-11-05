@@ -1,0 +1,15 @@
+DataApp {
+  name = "rc141-qa-f054-app-mirror-20261105-111950",
+  run_as = "user:ian@textql.com",
+  sources = [
+    { name = "deals", type = "python_code", path = "sources/deals.py" },
+    { name = "win_rate", type = "python_code", path = "sources/win_rate.py" },
+    { name = "rep_win_rate", type = "python_code", path = "sources/rep_win_rate.py" },
+    { name = "winrate_rep", type = "python_code", path = "sources/winrate_rep.py" },
+    { name = "win_rate_by_rep", type = "python_code", path = "sources/win_rate_by_rep.py" },
+    { name = "deal_win_rates", type = "python_code", path = "sources/deal_win_rates.py" },
+    { name = "win_rate_table_source", type = "python_code", path = "sources/win_rate_table_source.py" },
+    { name = "rep_wr_v2", type = "python_code", path = "sources/rep_wr_v2.py" },
+    { name = "rep_win_rate_20261105", type = "python_code", path = "sources/rep_win_rate_20261105.py" }
+  ]
+}
