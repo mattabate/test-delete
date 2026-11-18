@@ -1,0 +1,10 @@
+Evaluation {
+  name = "qa-1118-ev-ui-accuracy",
+  question = "Execute exactly SELECT 42 AS answer and submit its dataframe.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_sql = "SELECT 42 AS answer",
+  golden_tolerance = "0.25"
+}
