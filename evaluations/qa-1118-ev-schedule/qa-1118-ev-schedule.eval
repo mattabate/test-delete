@@ -1,0 +1,13 @@
+Evaluation {
+  name = "qa-1118-ev-schedule",
+  question = "Submit scalar 42.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_value = "42",
+  golden_type = "integer",
+  schedules = [
+    { cron = "0 0 1 1 *", timezone = "UTC" }
+  ]
+}
