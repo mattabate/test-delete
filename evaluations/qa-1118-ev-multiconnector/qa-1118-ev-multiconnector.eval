@@ -1,0 +1,9 @@
+Evaluation {
+  name = "qa-1118-ev-multiconnector",
+  question = "Execute SELECT 42 AS qa_value using data_query separately on connector 37 and connector 112. Do not list or read tables, memory, or files. Final answer must contain qa-1118-ev-answer and the two constant results.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "quality",
+  enabled = true,
+  connectors = ["id:37", "id:112"],
+  criteria = ["The answer contains qa-1118-ev-answer and reports 42 from both connectors."]
+}
