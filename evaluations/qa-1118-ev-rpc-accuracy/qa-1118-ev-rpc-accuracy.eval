@@ -4,7 +4,7 @@ Evaluation {
   run_as = "user:jbmeat@tqllabs.com",
   type = "accuracy",
   enabled = true,
-  connectors = ["id:37"],
+  connectors = ["id:112"],
   golden_value = "42",
   golden_type = "integer",
   golden_tolerance = "0.25"
