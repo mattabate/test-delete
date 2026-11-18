@@ -1,0 +1,11 @@
+Evaluation {
+  name = "qa-1118-ev-two-tries",
+  question = "Use python to generate exactly one random bit with secrets.randbelow(2) and print it. Submit that exact scalar number with submit_answer, even if it is 1. Do not read tables, files or memory.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_value = "0",
+  golden_type = "integer",
+  golden_tolerance = "0"
+}
