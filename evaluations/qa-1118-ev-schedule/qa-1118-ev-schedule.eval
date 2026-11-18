@@ -3,11 +3,11 @@ Evaluation {
   question = "Submit scalar 42.",
   run_as = "user:jbmeat@tqllabs.com",
   type = "accuracy",
-  enabled = true,
+  enabled = false,
   connectors = ["id:37"],
   golden_value = "42",
   golden_type = "integer",
   schedules = [
-    { cron = "0 0 1 1 *", timezone = "UTC" }
+    { cron = "*/5 * * * *", timezone = "America/New_York" }
   ]
 }
