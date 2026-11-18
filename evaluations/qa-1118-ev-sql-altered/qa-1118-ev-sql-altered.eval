@@ -1,0 +1,9 @@
+Evaluation {
+  name = "qa-1118-ev-sql-altered",
+  question = "Use data_query on connector 37 to execute exactly this synthetic constant-only SQL: SELECT 1 AS a, 'alpha' AS b UNION ALL SELECT 3, 'beta'. Do not read tables, memory or other files. Submit exactly that dataframe with submit_answer, preserving its columns and values, without rewriting it.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_sql = "SELECT 1 AS a, 'alpha' AS b UNION ALL SELECT 2, 'beta'"
+}
