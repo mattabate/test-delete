@@ -1,0 +1,11 @@
+Evaluation {
+  name = "qa-1118-ev-rpc-accuracy",
+  question = "Submit the scalar value 42 without querying data.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_value = "42",
+  golden_type = "integer",
+  golden_tolerance = "0"
+}
