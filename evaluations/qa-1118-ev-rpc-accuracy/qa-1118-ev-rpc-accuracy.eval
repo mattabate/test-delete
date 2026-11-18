@@ -6,5 +6,6 @@ Evaluation {
   enabled = true,
   connectors = ["id:37"],
   golden_value = "42",
-  golden_type = "integer"
+  golden_type = "integer",
+  golden_tolerance = "0"
 }
