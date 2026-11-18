@@ -1,0 +1,9 @@
+Evaluation {
+  name = "qa-1118-ev-pbi-quality",
+  question = "Reply exactly qa-1118-ev-answer. Do not query data, workspaces or files.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "quality",
+  enabled = true,
+  connectors = ["id:110"],
+  criteria = ["The final answer contains qa-1118-ev-answer."]
+}
