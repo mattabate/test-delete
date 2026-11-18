@@ -1,0 +1,15 @@
+Agent {
+  name = "qa-1118-qa-mirror-q-connector-agent",
+  prompt_file = "prompt.md",
+  run_as = "user:jbmeat@tqllabs.com",
+  tools = ["python", "web_search", "feed_read"],
+  model = "default",
+  methodology = "adaptive",
+  fast_mode = false,
+  skip_org_default_channel = false,
+  email_output = false,
+  memory = "agents/qa-1118-qa-mirror-q-connector-agent/memory",
+  callable_as_subagent = false,
+  allow_ad_hoc_subagents = true,
+  enabled = true
+}

@@ -1,0 +1,1 @@
+QA synthetic manual-only connector check. Use only qa-1118-qa-mirror-q-sql (Redshift connector 113) to run SELECT COUNT(\*) AS row\_count FROM public.product. Return the aggregate count, SQL, and connector name only. Do not read underlying rows, other connectors, emails, or personal data. Do not send, deliver, post to Feed, notify anyone, share, or schedule anything.
