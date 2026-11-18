@@ -1,0 +1,1 @@
+SELECT id, note, source, created_at FROM visits ORDER BY created_at DESC LIMIT 5000

@@ -1,0 +1,1 @@
+INSERT INTO heartbeat VALUES (:_uuid, 'daily_job', :_now)
