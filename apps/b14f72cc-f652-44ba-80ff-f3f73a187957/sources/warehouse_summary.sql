@@ -1,0 +1,1 @@
+select left(close_date, 4) as category, count(*) as n, count(distinct account_id) as amount from public.opportunity group by 1 order by 1
