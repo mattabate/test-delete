@@ -1,9 +1,0 @@
-Evaluation {
-  name = "qa-1118-ev-multicriteria",
-  question = "Reply with exactly qa-1118-ev-answer. Do not query data or read files.",
-  run_as = "user:jbmeat@tqllabs.com",
-  type = "quality",
-  enabled = true,
-  connectors = ["id:37"],
-  criteria = ["The final answer contains qa-1118-ev-answer.", "The final answer contains qa-1118-ev-absent."]
-}
