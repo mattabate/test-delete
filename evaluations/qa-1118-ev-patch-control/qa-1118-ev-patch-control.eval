@@ -1,0 +1,10 @@
+Evaluation {
+  name = "qa-1118-ev-patch-control",
+  question = "Read only /sandbox/files/library/qa-1118-ev-ontology.md using python or read_file. Extract the value after qa-1118-ev-value: and submit that exact scalar string with submit_answer. Do not read any other files, memory, or tables.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_value = "qa-1118-ev-green",
+  golden_type = "string"
+}
