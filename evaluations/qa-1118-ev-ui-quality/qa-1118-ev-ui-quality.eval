@@ -1,9 +1,0 @@
-Evaluation {
-  name = "qa-1118-ev-ui-quality",
-  question = "Reply with exactly qa-1118-ev-answer. Do not query data.",
-  run_as = "user:jbmeat@tqllabs.com",
-  type = "quality",
-  enabled = true,
-  connectors = ["id:37"],
-  criteria = ["The final answer is exactly qa-1118-ev-answer."]
-}
