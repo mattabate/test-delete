@@ -6,8 +6,5 @@ Evaluation {
   enabled = false,
   connectors = ["id:37"],
   golden_value = "42",
-  golden_type = "integer",
-  schedules = [
-    { cron = "*/5 * * * *", timezone = "America/New_York" }
-  ]
+  golden_type = "integer"
 }
