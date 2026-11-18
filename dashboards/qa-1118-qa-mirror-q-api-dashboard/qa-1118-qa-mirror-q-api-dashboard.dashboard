@@ -1,0 +1,7 @@
+Dashboard {
+  name = "qa-1118-qa-mirror-q-api-dashboard",
+  run_as = "user:jbmeat@tqllabs.com",
+  description = "QA test dashboard: reads live product data from dummyjson.com via qa-1118-qa-mirror-q-api.",
+  type = "streamlit",
+  entrypoint = "qa-1118-qa-mirror-q-api-dashboard.py"
+}
