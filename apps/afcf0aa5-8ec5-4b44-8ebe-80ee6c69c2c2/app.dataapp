@@ -2,24 +2,16 @@ DataApp {
   name = "RC9 Probe lemur",
   run_as = "user:ian@textql.com",
   sources = [
-    { name = "deals", type = "python_code", path = "sources/deals.py" },
-    { name = "slow_src", type = "python_code", path = "sources/slow_src.py" }
+    { name = "deals", type = "python_code", path = "sources/deals.py" }
   ],
   functions = [
     {
       name = "slow_probe",
-      description = "rc9 timeout test: sleep N seconds",
+      description = "Sleeps for a given number of seconds and returns how long it slept; used to test async/loading behavior.",
       path = "compute/slow_probe.py",
+      returns = "An object {slept: seconds}",
       parameters = [
-        { name = "seconds", type = "number" }
-      ]
-    },
-    {
-      name = "slow_query",
-      description = "rc9 timeout test: Snowflake SYSTEM$WAIT via ana.query",
-      path = "compute/slow_query.py",
-      parameters = [
-        { name = "seconds", type = "number" }
+        { name = "seconds", type = "number", description = "Number of seconds to sleep before returning" }
       ]
     }
   ]
