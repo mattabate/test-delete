@@ -1,0 +1,5 @@
+DataApp {
+  name = "qa-1118-qa-mirror-q-map",
+  run_as = "user:jbmeat@tqllabs.com",
+  description = "Synthetic Leaflet map on OpenStreetMap standard tiles with a London marker. No connector data; a static reference app."
+}
