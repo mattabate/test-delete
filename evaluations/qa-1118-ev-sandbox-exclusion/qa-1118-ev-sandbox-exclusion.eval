@@ -1,0 +1,10 @@
+Evaluation {
+  name = "qa-1118-ev-sandbox-exclusion",
+  question = "Using python, check ONLY these exact paths with pathlib.Path.exists(): /sandbox/files/library/members/9fb02af8-c2a4-4920-9cfb-c7a8dbd641d5/qa-1118-ev-sentinel, /tmp/sandbox-memory/qa-1118-ev-sentinel, /sandbox/files/library/evaluations/qa-1118-ev-rpc-accuracy/qa-1118-ev-rpc-accuracy.eval. Do not list directories or read any memory or .eval contents. Print the three exact paths with booleans as actual tool output. Submit scalar string absent only if all three are absent, otherwise present.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_value = "absent",
+  golden_type = "string"
+}
