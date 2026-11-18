@@ -1,0 +1,10 @@
+Evaluation {
+  name = "qa-1118-ev-delete-chat",
+  question = "Submit the scalar value42.",
+  run_as = "user:jbmeat@tqllabs.com",
+  type = "accuracy",
+  enabled = true,
+  connectors = ["id:37"],
+  golden_value = "42",
+  golden_type = "integer"
+}
