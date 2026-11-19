@@ -1,0 +1,1 @@
+Create a short report using ONLY this synthetic data: apples 3, pears 2, total 5. Title and email subject: qa-1118-qa-mirror-mail-lemur-report. Include one small table and a sentence saying this is synthetic QA data. Do not access any data source, Library, connectors or files. Do not send any messages or email.

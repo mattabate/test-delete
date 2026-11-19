@@ -1,0 +1,12 @@
+Playbook {
+  name = "qa-1118-qa-mirror-mail-report",
+  prompt_file = "prompt.md",
+  run_as = "user:jbmeat@tqllabs.com",
+  cron_string = "0 13 * * *",
+  connectors = ["id:3"],
+  tools = ["sql", "python", "web_search"],
+  report_output_style = "executive",
+  model = "default",
+  email_recipients = ["jbmeat@tqllabs.com"],
+  enabled = false
+}
